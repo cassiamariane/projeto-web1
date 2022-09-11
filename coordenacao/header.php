@@ -7,7 +7,7 @@
       PROGAE - Programa de Gerenciamento de Atividades Extensionistas
     </title>
     <link rel="stylesheet" href="../geral.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="container">

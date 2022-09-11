@@ -10,7 +10,7 @@
   
 -->
 
-<?php include('layout/header.php');?>
+<?php include('header.php');?>
       <nav>
         <ul>
           <li><a href="../index.php">Projetos</a></li>
