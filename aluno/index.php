@@ -13,14 +13,14 @@
 <?php include('layout/header.php');?>
       <nav>
         <ul>
-          <li><a href="../index.html">Projetos</a></li>
-          <li><a href="../home/noticias.html"> Notícias</a></li>
+          <li><a href="../index.php">Projetos</a></li>
+          <li><a href="../home/noticias.php"> Notícias</a></li>
           <div class="search-box">
             <input type="text" />
             <img src="../imagens/lupa.png" alt="" />
           </div>
           <li class="dropdown">
-            <a href="../index.html"><span>Sair ></span></a>
+            <a href="../index.php"><span>Sair ></span></a>
           </li>
         </ul>
       </nav>
@@ -33,7 +33,7 @@
           <div id="objetivo" class="left">
             <h3>Objetivo: &nbsp;Projeto de artigos acadêmicos</h3>
           </div>
-          <a href="./visualizar_mensagem.html"> 
+          <a href="./visualizar_mensagem.php"> 
             <div id="notificacoes" class="right">
               <p><b> Mensagem</b></p>
               <hr>
@@ -62,7 +62,7 @@
           <div id="sair-novo" class="right">
             <button class="btn" id="sair">Sair do Projeto</button>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="./enviar_relatorio.html">
+            <a href="./enviar_relatorio.php">
             <button class="btn" id="novo">Novo Relatório</button>
             </a>
           </div>
@@ -102,20 +102,13 @@
           <div id="sair-novo" class="right">
             <button class="btn" id="sair">Sair do Projeto</button>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="./enviar_relatorio.html">
+            <a href="./enviar_relatorio.php">
             <button class="btn" id="novo">Novo Relatório </button>
             </a>
           </div>
         </div>
       </main>
-      <footer>
-        <address>
-          <p>(21) 4002-8922 / (21) 91234-5678</p>
-          <p>progae@ufrrj.br</p>
-        </address>
-        <img src="../imagens/rural_logo.png" alt="" />
-        <img src="../imagens/proext.png" alt="" />
-      </footer>
+      <?php include('../footer.php'); ?>
     </div>
   </body>
 </html>

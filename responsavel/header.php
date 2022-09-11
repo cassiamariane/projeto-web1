@@ -1,3 +1,15 @@
+<!--
+
+  Feito por:
+
+  Cássia Mariane
+  Caio Fernandes
+  Daniel Vinicius
+  
+  Sistemas de Informação 2021.1 - UFRRJ
+  
+-->
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -7,8 +19,8 @@
       PROGAE - Programa de Gerenciamento de Atividades Extensionistas
     </title>
     <link rel="stylesheet" href="../geral.css" />
+    <link rel="stylesheet" href="login.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
     <div class="container">

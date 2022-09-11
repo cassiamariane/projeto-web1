@@ -10,11 +10,11 @@
   
 -->
 
-<?php include('layout/header.php');?>
+<?php include('header.php');?>
       <nav>
         <ul>
-          <li><a href="./index.html">Projetos</a></li>
-          <li><a href="./home/noticias.html"> Notícias</a></li>
+          <li><a href="./index.php">Projetos</a></li>
+          <li><a href="./home/noticias.php"> Notícias</a></li>
           <div class="search-box">
             <input type="text" />
             <img src="./imagens/lupa.png" alt="" />
@@ -22,8 +22,8 @@
           <li class="dropdown">
             <span>Entrar ></span>
             <div class="dropdown-content">
-              <a href="../aluno/login.html">Sou aluno</a>
-              <a href="../responsavel/login.html">Sou professor</a>
+              <a href="./aluno/login.php">Sou aluno</a>
+              <a href="./responsavel/login.php">Sou professor</a>
             </div>
           </li>
         </ul>
@@ -40,75 +40,68 @@
             <th>Vagas Ocupadas</th>
           </tr>
           <tr>
-            <td><a href="./aluno/inscricao_projeto.html">Lorem ipsum</a></td>
+            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
           </tr>
           <tr>
-            <td><a href="./aluno/inscricao_projeto.html">Lorem ipsum</a></td>
+            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
           </tr>
           <tr>
-            <td><a href="./aluno/inscricao_projeto.html">Lorem ipsum</a></td>
+            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
           </tr>
           <tr>
-            <td><a href="./aluno/inscricao_projeto.html">Lorem ipsum</a></td>
+            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
           </tr>
           <tr>
-            <td><a href="./aluno/inscricao_projeto.html">Lorem ipsum</a></td>
+            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
           </tr>
           <tr>
-            <td><a href="./aluno/inscricao_projeto.html">Lorem ipsum</a></td>
+            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
           </tr>
           <tr>
-            <td><a href="./aluno/inscricao_projeto.html">Lorem ipsum</a></td>
+            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
           </tr>
           <tr>
-            <td><a href="./aluno/inscricao_projeto.html">Lorem ipsum</a></td>
+            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
           </tr>
           <tr>
-            <td><a href="./aluno/inscricao_projeto.html">Lorem ipsum</a></td>
+            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
           </tr>
           <tr>
-            <td><a href="./aluno/inscricao_projeto.html">Lorem ipsum</a></td>
+            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
             <td>Lorem ipsum</td>
           </tr>
         </table>
       </main>
-      <footer>
-        <address>
-          <p>(21) 4002-8922 / (21) 91234-5678</p>
-          <p>progae@ufrrj.br</p>
-        </address>
-        <img src="./imagens/rural_logo.png" alt="" />
-        <img src="./imagens/proext.png" alt="" />
-      </footer>
+      <?php include('./footer.php'); ?>
     </div>
   </body>
 </html>

@@ -12,7 +12,7 @@
   <body>
     <div class="container">
       <header>
-        <a href="../index.html">
+        <a href="../index.php">
           <img src="../imagens/rural.png" />
           <div>
             <h1 id="titulo">PROGAE</h1>
@@ -25,8 +25,8 @@
       </header>
       <nav>
         <ul>
-          <li><a href="../index.html">Projetos</a></li>
-          <li><a href="./noticias.html"> Notícias</a></li>
+          <li><a href="../index.php">Projetos</a></li>
+          <li><a href="./noticias.php"> Notícias</a></li>
           <div class="search-box">
             <input type="text" />
             <img src="../imagens/lupa.png" alt="" />
@@ -34,8 +34,8 @@
           <li class="dropdown">
             <span>Entrar ></span>
             <div class="dropdown-content">
-              <a href="../aluno/login.html">Sou aluno</a>
-              <a href="../responsavel/login.html">Sou professor</a>
+              <a href="../aluno/login.php">Sou aluno</a>
+              <a href="../responsavel/login.php">Sou professor</a>
             </div>
           </li>
         </ul>
