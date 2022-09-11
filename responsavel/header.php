@@ -25,7 +25,7 @@
   <body>
     <div class="container">
       <header>
-        <a href="../index.html">
+        <a href="../index.php">
           <img src="../imagens/rural.png" />
           <div>
             <h1 id="titulo">PROGAE</h1>
