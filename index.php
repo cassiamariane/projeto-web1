@@ -11,23 +11,6 @@
 -->
 
 <?php include('header.php');?>
-      <nav>
-        <ul>
-          <li><a href="./index.php">Projetos</a></li>
-          <li><a href="./home/noticias.php"> Notícias</a></li>
-          <div class="search-box">
-            <input type="text" />
-            <img src="./imagens/lupa.png" alt="" />
-          </div>
-          <li class="dropdown">
-            <span>Entrar ></span>
-            <div class="dropdown-content">
-              <a href="./aluno/login.php">Sou aluno</a>
-              <a href="./responsavel/login.php">Sou professor</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
       <main>
         <h1 id="titulo">Projetos Abertos<br /></h1>
         <br />

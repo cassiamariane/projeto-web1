@@ -23,3 +23,29 @@
           </div>
         </a>
       </header>
+      
+      <nav>
+        <ul>
+          <li><a href="./index.php">Projetos</a></li>
+          <li><a href="./home/noticias.php"> Notícias</a></li>
+          <div class="search-box">
+            <input type="text" />
+            <img src="./imagens/lupa.png" alt="" />
+          </div>
+          <li class="dropdown">
+          <?php
+          if(isset($_SESSION['signedin']) && $_SESSION['signedin'] == true){
+            echo "<form action=\"<?php session_unset(); header(\"Location: ../index.php\");?>\">
+            <a>Sair ></a>
+          </form>";
+          } else {
+            echo "<span>Entrar ></span>
+            <div class=\"dropdown-content\">
+              <a href=\"./aluno/login.php\">Sou aluno</a>
+              <a href=\"./responsavel/login.php\">Sou professor</a>
+            </div>";
+          }
+          ?>
+          </li>
+        </ul>
+      </nav>

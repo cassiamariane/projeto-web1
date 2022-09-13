@@ -39,7 +39,11 @@
             <a>Sair ></a>
           </form>";
           } else {
-            echo "<a href=\"../index.php\"><span>Sair ></span></a>";
+            echo "<span>Entrar ></span>
+            <div class=\"dropdown-content\">
+              <a href=\"./aluno/login.php\">Sou aluno</a>
+              <a href=\"./responsavel/login.php\">Sou professor</a>
+            </div>";
           }
           ?>
           </li>
