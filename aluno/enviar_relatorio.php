@@ -11,19 +11,6 @@
 -->
 
 <?php include('header.php');?>
-      <nav>
-        <ul>
-          <li><a href="../index.php">Projetos</a></li>
-          <li><a href="../home/noticias.php"> Notícias</a></li>
-          <div class="search-box">
-            <input type="text" />
-            <img src="../imagens/lupa.png" alt="" />
-          </div>
-          <li class="dropdown">
-            <a href="../index.php"><span>Sair ></span></a>
-          </li>
-        </ul>
-      </nav>
       <main>
         <h1 id="titulo">Novo Relatório<br /></h1>
         <br />
