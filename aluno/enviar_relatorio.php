@@ -10,7 +10,13 @@
   
 -->
 
-<?php include('header.php');?>
+<?php 
+session_start();
+if(!isset($_SESSION['signedin']) or $_SESSION['signedin'] == false){
+  header("location: login.php");
+}
+include('header.php')
+;?>
       <main>
         <h1 id="titulo">Novo Relatório<br /></h1>
         <br />

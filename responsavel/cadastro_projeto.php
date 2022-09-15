@@ -10,7 +10,12 @@
   
 -->
 
-<?php include('header.php'); ?>
+<?php
+session_start();
+if(!isset($_SESSION['signedin']) or $_SESSION['signedin'] == false){
+  header("location: login.php");
+}
+include('header.php'); ?>
       <nav>
         <ul>
           <li><a href="../index.php">Projetos</a></li>

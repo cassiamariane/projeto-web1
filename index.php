@@ -10,7 +10,9 @@
   
 -->
 
-<?php include('header.php');?>
+<?php 
+session_start();
+include('header.php');?>
       <main>
         <h1 id="titulo">Projetos Abertos<br /></h1>
         <br />

@@ -17,8 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha = validForm($_POST["senha"]);
     $senha2 = validForm($_POST["senha2"]);
     $perfil = validForm($_POST["perfil"]);
-    $curso = validForm($_POST["curso"]);
-    $matricula = validForm($_POST["matricula"]);
+    $ciape = validForm($_POST["ciape"]);
 
     //empty blanks error
     if ($senha != $senha2) {
@@ -36,11 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result == false) {
             $errors[] = "<span>Erro ao cadastrar usuário</span>";
         } else {
-            $sql = "INSERT INTO Aluno (matricula, email, curso) VALUES ('$matricula', '$email', '$curso')";
+            $sql = "INSERT INTO Responsavel (ciape, email) VALUES ('$ciape', '$email')";
             $result = mysqli_query($connect, $sql);
 
             if ($result == false) {
-                $errors[] = "<span>Erro ao cadastrar aluno</span>";
+                $errors[] = "<span>Erro ao cadastrar responável</span>";
             } else {
                 mysqli_close($connect);
                 $_SESSION['signedin'] = true;

@@ -12,7 +12,7 @@
   <body>
     <div class="container">
       <header>
-        <a href="./index.php">
+        <a href="index.php">
           <img src="./imagens/rural.png" />
           <div>
             <h1 id="titulo">PROGAE</h1>
@@ -23,21 +23,14 @@
           </div>
         </a>
       </header>
-      
       <nav>
         <ul>
-          <li><a href="./index.php">Projetos</a></li>
-          <li><a href="./home/noticias.php"> Notícias</a></li>
-          <div class="search-box">
-            <input type="text" />
-            <img src="./imagens/lupa.png" alt="" />
-          </div>
+          <li><a href="../index.php">Projetos</a></li>
+          <li><a href="../home/noticias.php"> Notícias</a></li>
           <li class="dropdown">
           <?php
           if(isset($_SESSION['signedin']) && $_SESSION['signedin'] == true){
-            echo "<form action=\"<?php session_unset(); header(\"Location: ../index.php\");?>\">
-            <a>Sair ></a>
-          </form>";
+            echo "<a href=\"logout.php\">Sair ></a>";
           } else {
             echo "<span>Entrar ></span>
             <div class=\"dropdown-content\">

@@ -11,6 +11,7 @@
 -->
 
 <?php
+session_start();
   require "valida_cadastro.php";
   include('header.php');
   ?>
@@ -115,7 +116,7 @@
           <div class="clear"></div>
           <div id="enviar" class="right">
             <a href="./index.php">
-              <button class="btn" style="width: 160px">Enviar</button>
+              <button type="submit" class="btn" style="width: 160px">Enviar</button>
             </a>
           </div>
           <div class="clear"></div>

@@ -1,15 +1,3 @@
-<!--
-
-  Feito por:
-
-  Cássia Mariane
-  Caio Fernandes
-  Daniel Vinicius
-  
-  Sistemas de Informação 2021.1 - UFRRJ
-  
--->
-
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -20,7 +8,7 @@
     </title>
     <link rel="stylesheet" href="../geral.css" />
     <link rel="stylesheet" href="../login.css">
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <div class="container">
@@ -36,3 +24,22 @@
           </div>
         </a>
       </header>
+      <nav>
+        <ul>
+          <li><a href="../index.php">Projetos</a></li>
+          <li><a href="../home/noticias.php"> Notícias</a></li>
+          <li class="dropdown">
+          <?php
+          if(isset($_SESSION['signedin']) && $_SESSION['signedin'] == true){
+            echo "<a href=\"logout.php\">Sair ></a>";
+          } else {
+            echo "<span>Entrar ></span>
+            <div class=\"dropdown-content\">
+              <a href=\"../aluno/login.php\">Sou aluno</a>
+              <a href=\"login.php\">Sou professor</a>
+            </div>";
+          }
+          ?>
+          </li>
+        </ul>
+      </nav>
