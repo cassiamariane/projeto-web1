@@ -15,24 +15,13 @@ session_start();
 if(!isset($_SESSION['signedin']) or $_SESSION['signedin'] == false){
   header("location: login.php");
 }
-include('header.php'); ?>
-      <nav>
-        <ul>
-          <li><a href="../index.php">Projetos</a></li>
-          <li><a href="../home/noticias.php"> Notícias</a></li>
-          <div class="search-box">
-            <input type="text" />
-            <img src="../imagens/lupa.png" alt="" />
-          </div>
-          <li class="dropdown">
-            <a href="../index.php"><span>Sair ></span></a>
-          </li>
-        </ul>
-      </nav>
+require "valida_cadastro_projeto.php";
+include('header.php'); 
+?>
       <main class="login cadastro">
         <h1 id="titulo">Novo Projeto<br /></h1>
         <br />
-        <form action="./index.php" method="get">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
           <label for="nome">Nome do projeto: *</label>
           <input
             type="text"
@@ -42,18 +31,6 @@ include('header.php'); ?>
             placeholder="Ex: PET"
             style="width: 100%"
           />
-          <label for="area" name="area">Área de aplicação: *</label>
-          <select name="area" id="area">
-            <option value="ciencias-biologicas">Ciências Biológicas</option>
-            <option value="ciencias-saude">Ciências da Saúde</option>
-            <option value="ciencias-exatas">Ciências Exatas e da Terra</option>
-            <option value="ciencias-humanas">Ciências Humanas</option>
-            <option value="ciencias-sociais">Ciências Sociais Aplicadas</option>
-            <option value="engenharias">Engenharias</option>
-            <option value="interdisciplinar">Interdisciplinar</option>
-            <option value="linguistica">Linguística, Letras e Artes</option>
-          </select>
-          <br />
           <br />
           <label for="objetivo">Objetivo: *</label>
           <br />

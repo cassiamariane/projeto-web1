@@ -11,24 +11,31 @@
 -->
 
 <?php 
+require '../database/connection.php';
 session_start();
 if(!isset($_SESSION['signedin']) or $_SESSION['signedin'] == false){
   header("location: login.php");
 }
+$buscar_projetos = "SELECT * FROM projeto";
+$query_projetos = mysqli_query($connect, $buscar_projetos);
 include('header.php'); ?>
       <main>
         <h1 id="titulo">Projetos Ativos<br /></h1>
         <br />
-        <div style="display: flex; justify-content: space-between">
-          <h2 style="color: #14387f">PET</h2>
-          <a href="./cadastro_projeto.php">
+        <a href="./cadastro_projeto.php">
             <button id="novo-projeto" class="btn right">Novo projeto</button>
-          </a>
+        </a>
+        <?php
+            while($recebe_projetos = mysqli_fetch_array($query_projetos)){
+              $nome = $recebe_projetos['nome'];
+              $descricao = $recebe_projetos['descricao'];?>
+        <div style="display: flex; justify-content: space-between">
+          <h2 style="color: #14387f"><?php echo $nome;?></h2>
         </div>
         <br />
         <div id="projeto">
           <div id="objetivo" class="left">
-            <h3>Objetivo: &nbsp;Projeto de artigos acadêmicos</h3>
+            <h3>Objetivo: &nbsp;<?php echo $descricao;?></h3>
           </div>
           <a href="./solicitacoes.php">
             <div id="notificacoes" class="right">
@@ -66,6 +73,7 @@ include('header.php'); ?>
             </div>
           </div>
         </div>
+        <?php }; ?>
       </main>
       <?php include('../footer.php'); ?>
     </div>

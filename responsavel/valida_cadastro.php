@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = mysqli_query($connect, $sql);
 
             if ($result == false) {
-                $errors[] = "<span>Erro ao cadastrar responável</span>";
+                $errors[] = "<span>Erro ao cadastrar responsável</span>";
             } else {
                 mysqli_close($connect);
                 $_SESSION['signedin'] = true;

@@ -11,8 +11,12 @@
 -->
 
 <?php 
+require './database/connection.php';
 session_start();
-include('header.php');?>
+$buscar_projetos = "SELECT * FROM projeto";
+$query_projetos = mysqli_query($connect, $buscar_projetos);
+include('header.php');
+?>
       <main>
         <h1 id="titulo">Projetos Abertos<br /></h1>
         <br />
@@ -20,70 +24,20 @@ include('header.php');?>
         <table id="projetos-abertos">
           <tr>
             <th>Projeto</th>
-            <th>Coordenação</th>
-            <th>Vagas Abertas</th>
+            <th>Data de Início</th>
             <th>Vagas Ocupadas</th>
           </tr>
+          <?php
+            while($recebe_projetos = mysqli_fetch_array($query_projetos)){
+              $nome = $recebe_projetos['nome'];
+              $data = $recebe_projetos['data_inicio'];
+          ?>
           <tr>
-            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
+            <td><a href="./aluno/inscricao_projeto.php"><?php echo $nome;?></a></td>
+            <td><?php echo $data;?></td>
+            <td>0</td>
           </tr>
-          <tr>
-            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-          </tr>
-          <tr>
-            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-          </tr>
-          <tr>
-            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-          </tr>
-          <tr>
-            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-          </tr>
-          <tr>
-            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-          </tr>
-          <tr>
-            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-          </tr>
-          <tr>
-            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-          </tr>
-          <tr>
-            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-          </tr>
-          <tr>
-            <td><a href="./aluno/inscricao_projeto.php">Lorem ipsum</a></td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-            <td>Lorem ipsum</td>
-          </tr>
+          <?php }; ?>
         </table>
       </main>
       <?php include('./footer.php'); ?>

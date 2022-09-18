@@ -15,6 +15,7 @@ session_start();
 if(!isset($_SESSION['signedin']) or $_SESSION['signedin'] == false){
   header("location: login.php");
 }
+require "valida_inscricao_projeto.php"
 include('header.php');
 ?>
       <main>
@@ -27,11 +28,9 @@ include('header.php');
           <br />
           <p><b>Objetivo:</b> &nbsp;Ajudar grupos necessitados</p>
           <br />
-          <p><b>Área de aplicação:</b> &nbsp;Ciências Humanas/Psicologia</p>
-          <br />
           <p><b>Carta/Solicitação:</b></p>
           <br />
-          <textarea name="" id="" cols="50" rows="10"></textarea>
+          <textarea name="solicitacao"cols="50" rows="10"></textarea>
           <br />
           <div class="right">
             <a href="../index.php">

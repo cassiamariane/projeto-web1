@@ -11,7 +11,7 @@
 -->
 
 <?php
-session_start();
+
   require "valida_cadastro.php";
   include('header.php');
   ?>
