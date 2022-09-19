@@ -45,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['signedin'] = true;
                 $_SESSION['nome'] = $nome;
                 $_SESSION['email'] = $email;
+                $_SESSION['ciape'] = $ciape;
                 header("Location: index.php");
             }
         }

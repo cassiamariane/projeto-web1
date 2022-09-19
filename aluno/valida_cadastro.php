@@ -45,8 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 mysqli_close($connect);
                 $_SESSION['signedin'] = true;
                 $_SESSION['nome'] = $nome;
+                $_SESSION['matricula'] = "$matricula";
                 $_SESSION['email'] = $email;
-                header("Location: index.php");
+                header("Location: ../index.php");
             }
         }
     }

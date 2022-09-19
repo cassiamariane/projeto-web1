@@ -13,8 +13,8 @@
 <?php 
 require './database/connection.php';
 session_start();
-$buscar_projetos = "SELECT * FROM projeto";
-$query_projetos = mysqli_query($connect, $buscar_projetos);
+$sql = "SELECT * FROM projeto";
+$query = mysqli_query($connect, $sql);
 include('header.php');
 ?>
       <main>
@@ -28,12 +28,13 @@ include('header.php');
             <th>Vagas Ocupadas</th>
           </tr>
           <?php
-            while($recebe_projetos = mysqli_fetch_array($query_projetos)){
-              $nome = $recebe_projetos['nome'];
-              $data = $recebe_projetos['data_inicio'];
+            while($projetos = mysqli_fetch_array($query)){
+              $id = $projetos['id'];
+              $nome = $projetos['nome'];
+              $data = $projetos['data_inicio'];
           ?>
           <tr>
-            <td><a href="./aluno/inscricao_projeto.php"><?php echo $nome;?></a></td>
+            <td><a href="./aluno/inscricao_projeto.php?projeto=<?php echo $id?>"><?php echo $nome;?></a></td>
             <td><?php echo $data;?></td>
             <td>0</td>
           </tr>

@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $row = $result->fetch_assoc();
         $nome = $row['nome'];
+        $email = $row['email'];
         $senhaHash = $row['senha'];
 
         //verifying senha
@@ -32,10 +33,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$auth) {
             $errors[] = "<span>Senha inválida</span>";
         } else {
-            mysqli_close($connect);
+            $sql = "SELECT * FROM Responsavel WHERE email = '$identifier'";
+            $result = mysqli_query($connect, $sql);
+            $row = $result->fetch_assoc();
+            $ciape = $row['ciape']; 
             $_SESSION['signedin'] = true;
+            $_SESSION['ciape'] = $ciape;
             $_SESSION['nome'] = $nome;
             $_SESSION['email'] = $email;
+            mysqli_close($connect);
             header("Location: index.php");
         }
     }

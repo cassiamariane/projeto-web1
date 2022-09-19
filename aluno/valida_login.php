@@ -24,7 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $row = $result->fetch_assoc();
         $nome = $row['nome'];
+        $email = $row['email'];
         $senhaHash = $row['senha'];
+
+        $sql = "SELECT matricula FROM Aluno WHERE email = '$identifier'";
+        $matricula = mysqli_query($connect, $sql)->fetch_assoc()['matricula'];
 
         //verifying senha
         $auth = password_verify($senha, $senhaHash);
@@ -34,8 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             mysqli_close($connect);
             $_SESSION['signedin'] = true;
-            $_SESSION['nome'] = $nome;
-            $_SESSION['email'] = $email;
+            $_SESSION['matricula'] = "$matricula";
+            $_SESSION['nome'] = "$nome";
+            $_SESSION['email'] = "$email";
             header("Location: index.php");
         }
     }

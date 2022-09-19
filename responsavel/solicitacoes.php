@@ -10,52 +10,36 @@
   
 -->
 
-<?php 
+<?php
+require '../database/connection.php';
+require 'aceitar_solicitacao.php';
 session_start();
 if(!isset($_SESSION['signedin']) or $_SESSION['signedin'] == false){
   header("location: login.php");
 }
+$sql = "SELECT * FROM solicita";
+$query = mysqli_query($connect, $sql);
 include('header.php'); ?>
       <main class="solicitacoes">
         <h1 id="titulo">Solicitações<br /></h1>
         <br />
         <div>
-          <p><b>Nome</b></p>
           <p><b>Matrícula</b></p>
-          <p><b>Curso</b></p>
         </div>
-        <div class="solicit">
-          <p>Fulano Cicrano da Silva</p>
-          <p>12344567890</p>
-          <p>Sistemas de Informaçao</p>
-          <a href="./visualizar_solicitacao.php">
-            <div class="insc">Inscrição</div></a
-          >
-        </div>
-        <div class="solicit">
-          <p>Fulano Cicrano da Silva</p>
-          <p>12344567890</p>
-          <p>Sistemas de Informaçao</p>
-          <a href="./visualizar_solicitacao.php">
-            <div class="desist">Desistência</div></a
-          >
-        </div>
-        <div class="solicit">
-          <p>Fulano Cicrano da Silva</p>
-          <p>12344567890</p>
-          <p>Sistemas de Informaçao</p>
-          <a href="./visualizar_solicitacao.php">
-            <div class="insc">Inscrição</div></a
-          >
-        </div>
-        <div class="solicit">
-          <p>Fulano Cicrano da Silva</p>
-          <p>12344567890</p>
-          <p>Sistemas de Informaçao</p>
-          <a href="./visualizar_solicitacao.php">
-            <div class="msg">Mensagem</div></a
-          >
-        </div>
+        <?php
+            while($projetos = mysqli_fetch_array($query)){
+              $matricula = $projetos['matricula_aluno'];
+              $id = $projetos['id_projeto'];
+          ?>
+            <div class="solicit">
+          <p><?php echo $matricula;?></p>
+          <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">
+          <input type="hidden" name="matricula_aluno" value="<?php echo $matricula ?>">
+          <input type="hidden" name="id_projeto" value="<?php echo $id ?>">
+            <button>Aceitar solicitação</button>
+          </form>
+          </div>
+          <?php } ?>
       </main>
       <?php include('../footer.php'); ?>
     </div>

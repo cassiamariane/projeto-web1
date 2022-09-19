@@ -40,6 +40,7 @@ include('header.php');
             cols="30"
             rows="10"
           ></textarea>
+          <input type="hidden" name="ciape_responsavel" value="<?php echo $_SESSION['ciape'];?>">
 
           <div id="enviar" class="right">
             <a href="./index.php" id="enviar-projeto">
